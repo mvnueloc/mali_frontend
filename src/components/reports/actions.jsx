@@ -92,9 +92,14 @@ export default function Actions() {
                     key={action.id}
                     className="w-full flex-shrink-0 ">
                     <div className="bg-white p-6 rounded-lg h-full">
-                      <h3 className="text-lg font-semibold mb-2">
-                        <ReactMarkdown>{action.title}</ReactMarkdown>
-                      </h3>
+                      <div className="flex space-x-3 ">
+                        <h3 className="text-lg font-semibold mb-2">
+                          <ReactMarkdown>{action.title}</ReactMarkdown>
+                        </h3>
+                        <div className="h-3 w-3">
+                          <span class="animate-ping inline-flex justify-center items-center h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                        </div>
+                      </div>
 
                       <ReactMarkdown>{action.content}</ReactMarkdown>
                     </div>
@@ -104,6 +109,14 @@ export default function Actions() {
             </div>
           </>
         )}
+      </div>
+
+      <div className="flex justify-center items-center">
+        <img
+          className="w-10/12 md:w-1/2 mx-6 rounded-md"
+          src="/ESCALABILIIDAD.png"
+          alt="CREDENCIAL DE ELECTOR NACIONAL"
+        />
       </div>
     </article>
   );

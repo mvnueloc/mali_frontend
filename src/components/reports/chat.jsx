@@ -223,17 +223,20 @@ export default function Chat({ messages, setMessages, setShowChat }) {
   const sendMessage = async (message) => {
     console.log(message);
     try {
-      const response = await fetch("http://127.0.0.1:8080/conversation_text", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          user_message: `${message}`,
-          messages: `${messages}`,
-          model_choice: "groq",
-        }),
-      });
+      const response = await fetch(
+        "https://mali-metahack.azurewebsites.net/conversation_text",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            user_message: `${message}`,
+            messages: `${messages}`,
+            model_choice: "groq",
+          }),
+        }
+      );
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -317,10 +320,13 @@ export default function Chat({ messages, setMessages, setShowChat }) {
     formData.append("file", audioBlob, "recording.wav");
 
     try {
-      const response = await fetch("http://localhost:8080/transcribe", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://mali-metahack.azurewebsites.net/transcribe",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (!response.ok) {
         const errorData = await response.json();

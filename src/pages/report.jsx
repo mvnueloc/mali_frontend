@@ -125,8 +125,13 @@ export default function Report() {
                     evapotranspiration={evapotranspiration}
                   />
                   <Actions />
+                  <div className="flex justify-center items-center"></div>
                 </div>
               </section>
+
+              {/* ---------------------------- DNI ------------------- */}
+
+              {/* ----------------------------Actions------------------- */}
 
               <div
                 className={`w-full mx-auto md:max-w-4xl px-2 pb-10 pt-4 md:pt-10 md:pb-24
