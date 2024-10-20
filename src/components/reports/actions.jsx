@@ -97,7 +97,7 @@ export default function Actions() {
                           <ReactMarkdown>{action.title}</ReactMarkdown>
                         </h3>
                         <div className="h-3 w-3">
-                          <span class="animate-ping inline-flex justify-center items-center h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                          <span className="animate-ping inline-flex justify-center items-center h-full w-full rounded-full bg-sky-400 opacity-75"></span>
                         </div>
                       </div>
 
